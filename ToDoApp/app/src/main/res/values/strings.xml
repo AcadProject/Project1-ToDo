@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ToDoApp</string>
+    <string name="Addbutton">Add Task</string>
+    <string name="DoneButton">History</string>
+    <string name="Save">Save</string>
+    <string name="Cancel">Cancel</string>
+
+</resources>
