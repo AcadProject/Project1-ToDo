@@ -1,9 +1,14 @@
 package com.acadgild.jayadev.todoapp;
 
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
+import java.text.DateFormat;
+import java.text.FieldPosition;
 import java.text.ParseException;
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -71,13 +76,17 @@ public class ToDo implements Comparable<ToDo>{
 
     @Override
     public int compareTo(ToDo another) {
-        SimpleDateFormat sdf= new SimpleDateFormat("DD/MM/YYYY");
-
+        Date lhs = null, rhs = null;
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd/mm/yyyy");
         try {
-            return sdf.parse(date).compareTo(sdf.parse(another.date));
+            lhs=simpleDateFormat.parse(another.date);
+            rhs=simpleDateFormat.parse(this.date);
+
+            Log.i("lhs", lhs.toString());
+            Log.i("rhs", rhs.toString());
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return 0;
+        return lhs.compareTo(rhs);
     }
 }

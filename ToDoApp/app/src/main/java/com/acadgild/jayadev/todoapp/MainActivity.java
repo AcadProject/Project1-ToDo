@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         final ListView listView=(ListView)findViewById(R.id.list);
         list=db.getAllToDos();
-        //Collections.sort(list);
+        Collections.sort(list);
         adaptor=new AdapterClass(this,list);
         listView.setAdapter(adaptor);
 
